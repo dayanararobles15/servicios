@@ -7,7 +7,7 @@
         echo "<h1> Bienvenid@ " . $_SESSION['nom'] . "</h1>";
     ?>
 
-    <h2>PRODUCTOS</h2>
+    <h2>SUCURSALES</h2>
     
     <table id="dg" title="Productos" class="easyui-datagrid" style="width:700px;height:250px"
             url="models/tabla.php"

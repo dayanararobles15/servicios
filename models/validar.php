@@ -36,7 +36,7 @@ if(is_null($filas)){
 
     }else
     if($filas['perfil']=='vendedor'){ //vendedor
-    header('location: ../index.php?action=contacto');
+    header('location: ../index.php?action=servicios');
     }
     else{
     ?>

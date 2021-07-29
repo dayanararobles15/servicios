@@ -8,7 +8,13 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 include 'conexion.php';
 session_start();
 $bodega=$_SESSION['ciudad'];
-$sqlSelect = "SELECT p.id, p.nombre, b.ciudad,d.cantidad, p.precio,d.estado FROM bodega as b, producto as p, detalle_bodega as d where b.id=d.idbod and p.id=d.idprod and d.estado='S' and b.ciudad <>'$bodega'";
+
+if($bodega=='ADMIN'){
+    $sqlSelect = "SELECT p.id, p.nombre, b.ciudad,d.cantidad, p.precio,d.estado FROM bodega as b, producto as p, detalle_bodega as d where b.id=d.idbod and p.id=d.idprod and b.ciudad <>'$bodega'";
+}else{
+    $sqlSelect = "SELECT p.id, p.nombre, b.ciudad,d.cantidad, p.precio,d.estado FROM bodega as b, producto as p, detalle_bodega as d where b.id=d.idbod and p.id=d.idprod and d.estado='S' and b.ciudad <>'$bodega'";
+}
+
 
 
 $respuesta = $conn->query($sqlSelect);

@@ -5,7 +5,7 @@ $usuario=$_POST['usuario'];
 $contraseña=$_POST['contraseña'];
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("localhost","root","","bodegas");
+$conexion=mysqli_connect("bouqyro7qarzwymhfexr-mysql.services.clever-cloud.com","ubhxtrm5xmwbswzy","89QAlkECDWRqQT4y3UDA","bouqyro7qarzwymhfexr");
 
 $consulta="SELECT nombre,perfil,idbod,ciudad FROM usuarios as a,bodega as b WHERE a.nombre='$usuario' and a.contra='$contraseña' and a.idbod=b.id";
 
